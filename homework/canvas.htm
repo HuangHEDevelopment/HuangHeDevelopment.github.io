@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Canvas绘图与动画基础</title>
+</head>
+<body>
+<style>
+    #canvas{
+        border: 1px solid #aaa;
+        text-align: center;
+    }
+</style>
+<canvas id="canvas" width="1024" height="768">
+    你的浏览器太垃圾了！
+</canvas>
+<a href="https://huanghedevelopment.github.io/">visit me</a>
+<script>
+    
+    var context = canvas.getContext("2d");//得到绘图的上下文环境
+    context.beginPath();//开始绘制线条，若不使用beginPath，则不能绘制多条线条
+    context.moveTo(100, 100);//线条开始位置
+    context.lineTo(700, 700);//线条经过点
+    context.lineTo(100, 700);
+    context.lineTo(100, 100);
+    context.closePath();//结束绘制线条，不是必须的
+
+    context.lineWidth = 5;//设置线条宽度
+    context.strokeStyle = "red";//设置线条颜色
+    context.stroke();//用于绘制线条
+</script>
+</body>
+</html>
